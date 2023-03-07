@@ -1,3 +1,7 @@
+## 開発ルール
+
+- All changes be made on dev or other branches, then pull request to master
+
 ## Available Scripts
 
 In the project directory, you can run:
