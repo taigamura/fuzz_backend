@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { randomUUID } = require('crypto');
 let User = require('../models/user.model');
 
 // GET /users/
@@ -11,11 +12,17 @@ router.route('/').get((req, res) => {
 // POST /users/add
 router.route('/add').post((req, res) => {
     console.log(req.body)
-    const username = req.body.username;
+    const email = req.body.email;
+    const display_name = req.body.display_name;
+    const followers = req.body.followers;
+    const image_url = req.body.image_url;
+    const instagram_id = req.body.instagram_id;
+    const group = req.body.group;
+    const joined_date = req.body.joined_date;
     const age = req.body.age;
     const gender = req.body.gender;
 
-    const newUser = new User({username, age, gender});
+    const newUser = new User({email, display_name, followers, image_url, instagram_id, group, joined_date, age, gender});
 
     newUser.save()
         .then(() => res.json('User added!'))

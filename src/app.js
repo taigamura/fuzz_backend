@@ -35,9 +35,11 @@ const port = process.env.PORT || 3000;
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const groupsRouter = require('./routes/groups');
 
 app.use('/index', indexRouter);
 app.use('/users', usersRouter);
+app.use('/groups', groupsRouter);
 
 app.listen(port, () => {
     console.log(`server running at: ${port}`)

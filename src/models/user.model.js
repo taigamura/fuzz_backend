@@ -4,18 +4,18 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
-        username: {
-            type: String,
-            required: true,
-            unique: true,
-            trim: true,
-            minlength: 3
+        email: String,
+        display_name: String,
+        followers: Number,
+        image_url: String,
+        instagram_id: String,
+        group: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Group'
         },
+        joined_date: Date,
         age: Number,
-        gender: String,
-    },
-    {
-        timestamps: true,
+        gender: String
     }
 );
 
