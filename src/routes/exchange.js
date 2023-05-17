@@ -34,6 +34,8 @@ router.route('/').post( async (req, res) => {
       expires_in: data.expires_in,
     });
 
+    
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to exchange authorization code for access token' });
