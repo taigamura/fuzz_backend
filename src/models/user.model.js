@@ -9,10 +9,10 @@ const userSchema = new Schema(
         followers: Number,
         image_url: String,
         instagram_id: String,
-        group: {
+        groups: [{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Group'
-        },
+        }],
         joined_date: Date,
         age: Number,
         gender: String

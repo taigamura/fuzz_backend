@@ -17,12 +17,12 @@ router.route('/add').post((req, res) => {
     const followers = req.body.followers;
     const image_url = req.body.image_url;
     const instagram_id = req.body.instagram_id;
-    const group = req.body.group;
+    const groups = req.body.groups;
     const joined_date = req.body.joined_date;
     const age = req.body.age;
     const gender = req.body.gender;
 
-    const newUser = new User({email, display_name, followers, image_url, instagram_id, group, joined_date, age, gender});
+    const newUser = new User({email, display_name, followers, image_url, instagram_id, groups, joined_date, age, gender});
 
     newUser.save()
         .then(() => res.json('User added!'))
