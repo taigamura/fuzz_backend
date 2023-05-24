@@ -29,4 +29,14 @@ router.route('/add').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+/**
+ * POST /groups/:id
+ * @param remove User with id :id
+ */
+router.route('/:id').delete((req, res) => {
+    User.findByIdAndDelete(req.params.id)
+      .then(() => res.json('User deleted.'))
+      .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

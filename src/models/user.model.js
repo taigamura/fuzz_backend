@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
     {
-        email: String,
+        email: {
+            type: String,
+            index: true
+        },
         display_name: String,
         followers: Number,
         image_url: String,
